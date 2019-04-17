@@ -177,7 +177,7 @@ class FormatDecisionState(object):
       return True
 
     if style.Get(
-      'SPLIT_ALL_TOP_LEVEL_COMMA_SEPARATED_VALUES') and previous.value == ',':
+        'SPLIT_ALL_TOP_LEVEL_COMMA_SEPARATED_VALUES') and previous.value == ',':
       # Avoid breaking in a container that fits in the current line if possible
       opening = _GetOpeningBracket(current)
 
@@ -962,7 +962,7 @@ class FormatDecisionState(object):
         opening: (FormatToken) The unwrapped line we're currently processing.
     """
     return (opening.matching_bracket.total_length - opening.total_length +
-      self.stack[-1].indent) <= self.column_limit
+            self.stack[-1].indent) <= self.column_limit
 
 
 _COMPOUND_STMTS = frozenset(
