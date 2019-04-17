@@ -187,15 +187,6 @@ class FormatDecisionState(object):
         return True
 
       matching_bracket = opening.matching_bracket
-      # If the token after the container doesn't allow breaking, then split
-      # here. This avoids breaking at the closing, like:
-      # def f(a, b, c
-      #       ): -> d
-      # (which is ugly)
-      after_closing = matching_bracket.next_token
-      if after_closing is not None and not after_closing.can_break_before:
-        return True
-
       # If the container doesn't fit in the current line, must split
       return not self._ContainerFitsOnStartLine(opening)
 
