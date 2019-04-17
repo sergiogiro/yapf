@@ -239,6 +239,9 @@ _STYLE_HELP = dict(
       comma."""),
     SPLIT_ALL_COMMA_SEPARATED_VALUES=textwrap.dedent("""\
       Split before arguments"""),
+    SPLIT_ALL_TOP_LEVEL_COMMA_SEPARATED_VALUES=textwrap.dedent("""\
+      Split before arguments, but do not split all subexpressions recursively
+      (unless needed)."""),
     SPLIT_BEFORE_ARITHMETIC_OPERATOR=textwrap.dedent("""\
       Set to True to prefer splitting before '+', '-', '*', '/', '//', or '@'
       rather than after."""),
